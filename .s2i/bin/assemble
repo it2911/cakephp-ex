@@ -4,11 +4,8 @@ if [ -e /usr/local/sti/assemble ]; then
   # old assemble location in previous php image versions
   source /usr/local/sti/assemble
 else 
-  # source ${STI_SCRIPTS_PATH}/assemble
-  chmod 777 ${STI_SCRIPTS_PATH}/assemble
-  sed -i 's/php <$TEMPFILE/php $TEMPFILE --version=1.10.17/g' ${STI_SCRIPTS_PATH}/assemble
   source ${STI_SCRIPTS_PATH}/assemble
 fi
 
-[[ -d ./tmp ]] && chmod -R go+rw ./tmp
+[[ -d ./tmp ]] && chmod -R go+rw ./tmp && sed -i 's/php <$TEMPFILE/php $TEMPFILE --version=1.10.17/g' /tmp/script/assemble
 
