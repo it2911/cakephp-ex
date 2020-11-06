@@ -3,8 +3,10 @@
 if [ -e /usr/local/sti/assemble ]; then
   # old assemble location in previous php image versions
   source /usr/local/sti/assemble
+  echo 1
 else 
   source ${STI_SCRIPTS_PATH}/assemble
+  echo 2
 fi
 
 [[ -d ./tmp ]] && chmod -R go+rw ./tmp
